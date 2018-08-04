@@ -89,7 +89,8 @@ module.exports = function(strapi) {
             // Add some informations about ORM & client connection & tableName
             definition.orm = 'bookshelf';
             definition.client = _.get(connection.settings, 'client');
-
+	    definition.knex = ORM.knex	
+		
             // Register the final model for Bookshelf.
             const loadedModel = _.assign({
               tableName: definition.collectionName,
